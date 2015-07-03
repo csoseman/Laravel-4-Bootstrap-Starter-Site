@@ -24,8 +24,7 @@
 
 		<!-- CSS
 		================================================== -->
-        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}">
+        @include('site.layouts.css-head')
 
 		<style>
         body {
@@ -52,54 +51,22 @@
 	<body>
 		<!-- To make sticky footer need to wrap in a div -->
 		<div id="wrap">
-		<!-- Navbar -->
-		<div class="navbar navbar-default navbar-inverse navbar-fixed-top">
-			 <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
-					</ul>
+            @include('site.layouts.navbar')
 
-                    <ul class="nav navbar-nav pull-right">
-                        @if (Auth::check())
-                        @if (Auth::user()->hasRole('admin'))
-                        <li><a href="{{{ URL::to('admin') }}}">Admin Panel</a></li>
-                        @endif
-                        <li><a href="{{{ URL::to('user') }}}">Logged in as {{{ Auth::user()->username }}}</a></li>
-                        <li><a href="{{{ URL::to('user/logout') }}}">Logout</a></li>
-                        @else
-                        <li {{ (Request::is('user/login') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/login') }}}">Login</a></li>
-                        <li {{ (Request::is('user/create') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/create') }}}">{{{ Lang::get('site.sign_up') }}}</a></li>
-                        @endif
-                    </ul>
-					<!-- ./ nav-collapse -->
-				</div>
-			</div>
-		</div>
-		<!-- ./ navbar -->
+            <!-- Container -->
+            <div class="container">
+                <!-- Notifications -->
+                @include('notifications')
+                <!-- ./ notifications -->
 
-		<!-- Container -->
-		<div class="container">
-			<!-- Notifications -->
-			@include('notifications')
-			<!-- ./ notifications -->
+                <!-- Content -->
+                @yield('content')
+                <!-- ./ content -->
+            </div>
+            <!-- ./ container -->
 
-			<!-- Content -->
-			@yield('content')
-			<!-- ./ content -->
-		</div>
-		<!-- ./ container -->
-
-		<!-- the following div is needed to make a sticky footer -->
-		<div id="push"></div>
+            <!-- the following div is needed to make a sticky footer -->
+            <div id="push"></div>
 		</div>
 		<!-- ./wrap -->
 
@@ -110,11 +77,8 @@
 	      </div>
 	    </div>
 
-		<!-- Javascripts
-		================================================== -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
-
+		@include('site.layouts.js-foot')
+        {{-- !!!Should be taken out!!! --}}
         @yield('scripts')
 	</body>
 </html>

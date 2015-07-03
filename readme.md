@@ -1,5 +1,4 @@
-#Laravel 4 Bootstrap Starter Site [![ProjectStatus](http://stillmaintained.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site.png)](http://stillmaintained.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site)
-[![Build Status](https://api.travis-ci.org/andrewelkins/Laravel-4-Bootstrap-Starter-Site.png)](https://travis-ci.org/andrewelkins/Laravel-4-Bootstrap-Starter-Site)
+#Laravel 4 Bootstrap Starter Site
 
 This is a fork from [Laravel-4-Bootstrap-Starter-Site](https://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site) by @andrewelkins. Almost ALL of the README text below was taken from his repository as well.
 Laravel 4 Bootstrap Starter Site is a sample application for beginning development with Laravel 4.
@@ -54,7 +53,7 @@ Installation instructions for Bower are available [here](http://bower.io/).
 #### Option 1: Git Clone
 
 ```bash
-$ git clone git://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site.git laravel
+$ git clone git://github.com/csoseman/Laravel-4-Bootstrap-Starter-Site.git laravel
 ```
 
 #### Option 2: Download the repository

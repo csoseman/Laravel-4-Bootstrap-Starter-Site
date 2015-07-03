@@ -47,37 +47,25 @@
 		<link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
 		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 	</head>
-
 	<body>
-		<!-- To make sticky footer need to wrap in a div -->
-		<div id="wrap">
-            @include('site.layouts.navbar')
+        @include('site.layouts.navbar')
+        <div class="container">
+            <!-- Notifications -->
+            @include('notifications')
+            <!-- ./ notifications -->
 
-            <!-- Container -->
-            <div class="container">
-                <!-- Notifications -->
-                @include('notifications')
-                <!-- ./ notifications -->
+            <!-- Content -->
+            @yield('content')
+            <!-- ./ content -->
+        </div>
 
-                <!-- Content -->
-                @yield('content')
-                <!-- ./ content -->
-            </div>
-            <!-- ./ container -->
-
-            <!-- the following div is needed to make a sticky footer -->
-            <div id="push"></div>
-		</div>
-		<!-- ./wrap -->
-
-
-	    <div id="footer">
+	    {{-- Fixed Footer --}}
+        <footer class="footer">
 	      <div class="container">
-	        <p class="muted credit">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>
+	        <p class="text-muted">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>
 	      </div>
-	    </div>
-
-		@include('site.layouts.js-foot')
+        </footer>
+        @include('site.layouts.js-foot')
         {{-- !!!Should be taken out!!! --}}
         @yield('scripts')
 	</body>

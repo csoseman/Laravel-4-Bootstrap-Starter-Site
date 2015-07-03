@@ -1,6 +1,7 @@
 #Laravel 4 Bootstrap Starter Site [![ProjectStatus](http://stillmaintained.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site.png)](http://stillmaintained.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site)
 [![Build Status](https://api.travis-ci.org/andrewelkins/Laravel-4-Bootstrap-Starter-Site.png)](https://travis-ci.org/andrewelkins/Laravel-4-Bootstrap-Starter-Site)
 
+This is a fork from [Laravel-4-Bootstrap-Starter-Site](https://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site) by @andrewelkins. Almost ALL of the README text below was taken from his repository as well.
 Laravel 4 Bootstrap Starter Site is a sample application for beginning development with Laravel 4.
 
 ## Features
@@ -43,6 +44,10 @@ Also I recommend using [Former](http://anahkiasen.github.io/former/) for your fo
 	MCrypt PHP Extension
 
 Installation instructions for the mcrypt extension are available [here](http://php.net/manual/en/mcrypt.installation.php).
+
+	Bower Package Manager
+
+Installation instructions for Bower are available [here](http://bower.io/).
 
 ##How to install
 ### Step 1: Get the code

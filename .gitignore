@@ -19,3 +19,6 @@ vagrant
 
 # Packages
 _ide_helper.php
+
+# Bower Components
+/public/packages/bower_components

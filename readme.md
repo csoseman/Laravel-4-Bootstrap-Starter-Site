@@ -1,6 +1,6 @@
 #Laravel 4 Bootstrap Starter Site
 
-This is a fork from [Laravel-4-Bootstrap-Starter-Site](https://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site) by @andrewelkins. Almost ALL of the README text below was taken from his repository as well.
+This is a fork from [Laravel-4-Bootstrap-Starter-Site](https://github.com/csoseman/Laravel-4-Bootstrap-Starter-Site) by @andrewelkins. Almost ALL of the README text below was taken from his repository as well.
 Laravel 4 Bootstrap Starter Site is a sample application for beginning development with Laravel 4.
 
 ## Features
@@ -28,7 +28,7 @@ Laravel 4 Bootstrap Starter Site is a sample application for beginning developme
 	* [Generators](https://github.com/JeffreyWay/Laravel-4-Generators/blob/master/readme.md)
 
 ## Issues
-See [github issue list](https://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site/issues) for current list.
+See [github issue list](https://github.com/csoseman/Laravel-4-Bootstrap-Starter-Site/issues) for current list.
 
 ## Recommendations
 I recommend that you use Grunt to compile and minify your assets. See this [article](http://blog.elenakolevska.com/using-grunt-with-laravel-and-bootstrap) for details.
@@ -58,7 +58,7 @@ $ git clone git://github.com/csoseman/Laravel-4-Bootstrap-Starter-Site.git larav
 
 #### Option 2: Download the repository
 
-    https://github.com/andrewelkins/Laravel-4-Bootstrap-Starter-Site/archive/master.zip
+    https://github.com/csoseman/Laravel-4-Bootstrap-Starter-Site/archive/master.zip
 
 ### Step 2: Use Composer to install dependencies
 #### Option 1: Composer is not installed globally

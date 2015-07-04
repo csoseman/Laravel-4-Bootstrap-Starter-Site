@@ -84,6 +84,8 @@ Route::get('user/reset/{token}', 'UserController@getReset');
 Route::post('user/reset/{token}', 'UserController@postReset');
 //:: User Account Routes ::
 Route::post('user/{user}/edit', 'UserController@postEdit');
+//:: User Account Routes ::
+Route::get('forgot', 'UserController@getForgot');
 
 //:: User Account Routes ::
 Route::post('user/login', 'UserController@postLogin');

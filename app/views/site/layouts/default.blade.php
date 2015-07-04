@@ -48,15 +48,21 @@
 		<link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
 	</head>
 	<body>
-        @include('site.layouts.navbar')
+        <!-- Only include the navbar if a user is logged in -->
+        @if(Request::path() != 'user/login')
+            @include('site.layouts.navbar')
+        @endif
+
         <div class="container">
+
             <!-- Notifications -->
-            @include('notifications')
-            <!-- ./ notifications -->
+            @if(Request::path() != 'user/login')
+                @include('notifications')
+            @endif
 
             <!-- Content -->
             @yield('content')
-            <!-- ./ content -->
+
         </div>
 
 	    {{-- Fixed Footer --}}

@@ -6,7 +6,7 @@
     "Christian Soseman <christian.soseman@techscopellc.com>"
   ],
   "dependencies": {
-    "bootstrap": "3.3.1",
+    "bootstrap": "~3.3",
     "bootstrap-multiselect": "0.9.11",
     "chartjs": "~0.2.0",
     "datatables": "1.10.5",
@@ -24,7 +24,11 @@
     "jspdf": "1.0.272",
     "moment": "2.9.0",
     "typeahead.js": "0.10.5",
-    "admin-lte": "~2.1.2"
+    "admin-lte": "~2.1.2",
+    "ionicons": "~2.0.1",
+    "font-awesome": "~4.3.0",
+    "html5shiv": "~3.7.2",
+    "respond": "~1.4.2"
   },
   "description": "This package contains other packages that are used on a regular basis",
   "keywords": [

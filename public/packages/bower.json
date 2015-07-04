@@ -23,7 +23,8 @@
     "jquery-ui-bootstrap": "0.2.5",
     "jspdf": "1.0.272",
     "moment": "2.9.0",
-    "typeahead.js": "0.10.5"
+    "typeahead.js": "0.10.5",
+    "admin-lte": "~2.1.2"
   },
   "description": "This package contains other packages that are used on a regular basis",
   "keywords": [

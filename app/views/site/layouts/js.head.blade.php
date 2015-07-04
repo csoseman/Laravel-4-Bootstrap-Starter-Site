@@ -24,8 +24,8 @@
 
 		<!-- CSS
 		================================================== -->
-        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap-theme.min.css')}}">
+        <link rel="stylesheet" href="{{asset('packages/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('packages/bower_components/bootstrap/dist/css/bootstrap-theme.min.css')}}">
 
 		<style>
         body {
@@ -113,7 +113,7 @@
 		<!-- Javascripts
 		================================================== -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('packages/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
         @yield('scripts')
 	</body>

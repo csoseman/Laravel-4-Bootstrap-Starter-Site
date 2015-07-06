@@ -10,7 +10,9 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::get('admin1', function () {
+    return View::make('admin1/dashboard');
+});
 /** ------------------------------------------
  *  Route model binding
  *  ------------------------------------------

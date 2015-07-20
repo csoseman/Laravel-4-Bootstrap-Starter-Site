@@ -26,9 +26,13 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-    'local' => array('VirtualMint','homestead','*.local'), // Change this to your local machine hostname.
+    //'local' => array('VirtualMint','homestead','*.local'), // Change this to your local machine hostname.
+    //'staging' => array('your-staging-machine-name'),
+    //'production' => array('your-production-machine-name'),
+
+    'local' => array('VirtualMint','homestead','*.localdomain', 'TechScopeDevNotebook'), // Change this to your local machine hostname.
     'staging' => array('your-staging-machine-name'),
-    'production' => array('your-production-machine-name'),
+    'production' => array('usomauapp01'),
 
 ));
 

@@ -17,10 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {{ HTML::style('packages/bower_components/ionicons/css/ionicons.min.css') }}
     <!-- Theme style -->
     {{ HTML::style('packages/bower_components/admin-lte/dist/css/AdminLTE.min.css') }}
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-                                                          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
--->
+    <!-- Datatables style -->
+    {{ HTML::style('packages/bower_components/datatables/media/css/jquery.dataTables.min.css') }}
+
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter page. However, you can choose any
+    other skin. Make sure you apply the skin class to the body tag so the changes take effect. -->
+
     {{--<link href="dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />--}}
     {{ HTML::style('packages/bower_components/admin-lte/dist/css/skins/skin-blue.min.css') }}
 
@@ -56,46 +58,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     @include('admin1/layout/header')
     @include('admin1/layout/left-column')
-
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Page Header
-            <small>Optional description</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-            <li class="active">Here</li>
-          </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-
-          <!-- Your Page Content Here -->
-
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-
+    @include('admin1/layout/content')
     @include('admin1/layout/footer')
     @include('admin1/layout/control-sidebar')
 
-    </div><!-- ./wrapper -->
+</div><!-- ./wrapper -->
 
-    <!-- REQUIRED JS SCRIPTS -->
+<!-- REQUIRED JS SCRIPTS -->
 
-    <!-- jQuery 2.1.4 -->
-    {{ HTML::script('packages/bower_components/admin-lte/plugins/jQuery/jQuery-2.1.4.min.js') }}
-    <!-- Bootstrap 3.3.2 JS -->
-    {{ HTML::script('packages/bower_components/admin-lte/bootstrap/js/bootstrap.min.js') }}
-    <!-- AdminLTE App -->
-    {{ HTML::script('packages/bower_components/admin-lte/dist/js/app.min.js') }}
-
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-          Both of these plugins are recommended to enhance the
-          user experience. Slimscroll is required when using the
-          fixed layout. -->
-  </body>
+<!-- jQuery 2.1.4 -->
+{{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js') }}
+<!-- Bootstrap 3.3.2 JS -->
+{{ HTML::script('packages/bower_components/bootstrap/dist/js/bootstrap.min.js') }}
+<!-- AdminLTE App -->
+{{ HTML::script('packages/bower_components/admin-lte/dist/js/app.min.js') }}
+<!-- Datatables -->
+{{ HTML::script('http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js') }}
+<!-- Datatables -->
+{{ HTML::script('assets/js/datatables-bootstrap.js') }}
+<!-- Datatables fnReloadAjax Plugin -->
+{{ HTML::script('assets/js/datatables.fnReloadAjax.js') }}
+@yield('scripts')
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+      Both of these plugins are recommended to enhance the
+      user experience. Slimscroll is required when using the
+      fixed layout. -->
+</body>
 </html>

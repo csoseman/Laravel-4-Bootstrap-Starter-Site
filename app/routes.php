@@ -10,7 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('admin1', function () {
+Route::get('adm', function () {
+    //return "hello world!";
     return View::make('admin1/dashboard');
 });
 /** ------------------------------------------
@@ -38,7 +39,6 @@ Route::pattern('token', '[0-9a-z]+');
  */
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 {
-
     # Comment Management
     Route::get('comments/{comment}/edit', 'AdminCommentsController@getEdit');
     Route::post('comments/{comment}/edit', 'AdminCommentsController@postEdit');

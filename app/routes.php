@@ -10,28 +10,50 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('adm', function () {
-    //return "hello world!";
-    return View::make('admin1/dashboard');
-});
-/** ------------------------------------------
- *  Route model binding
- *  ------------------------------------------
- */
-Route::model('user', 'User');
-Route::model('comment', 'Comment');
-Route::model('post', 'Post');
-Route::model('role', 'Role');
+Route::group(['before' => 'auth'], function(){
+    Route::get('adm', function () {
+        //return "hello world!";
+        return View::make('admin1/dashboard');
+    });
+    /** ------------------------------------------
+     *  Route model binding
+     *  ------------------------------------------
+     */
+    Route::model('user', 'User');
+    Route::model('comment', 'Comment');
+    Route::model('post', 'Post');
+    Route::model('role', 'Role');
 
-/** ------------------------------------------
- *  Route constraint patterns
- *  ------------------------------------------
- */
-Route::pattern('comment', '[0-9]+');
-Route::pattern('post', '[0-9]+');
-Route::pattern('user', '[0-9]+');
-Route::pattern('role', '[0-9]+');
-Route::pattern('token', '[0-9a-z]+');
+    /** ------------------------------------------
+     *  Route constraint patterns
+     *  ------------------------------------------
+     */
+    Route::pattern('comment', '[0-9]+');
+    Route::pattern('post', '[0-9]+');
+    Route::pattern('user', '[0-9]+');
+    Route::pattern('role', '[0-9]+');
+    Route::pattern('token', '[0-9a-z]+');
+
+    //:: Application Routes ::
+
+    # Filter for detect language
+    Route::when('contact-us','detectLang');
+
+    # Contact Us Static Page
+    Route::get('contact-us', function()
+    {
+        // Return about us page
+        return View::make('site/contact-us');
+    });
+
+    # Posts - Second to last set, match slug
+    Route::get('{postSlug}', 'BlogController@getView');
+    Route::post('{postSlug}', 'BlogController@postView');
+
+    # Index Page - Last route, no matches
+    Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+});
+
 
 /** ------------------------------------------
  *  Admin Routes
@@ -95,21 +117,4 @@ Route::post('user/login', 'UserController@postLogin');
 # User RESTful Routes (Login, Logout, Register, etc)
 Route::controller('user', 'UserController');
 
-//:: Application Routes ::
 
-# Filter for detect language
-Route::when('contact-us','detectLang');
-
-# Contact Us Static Page
-Route::get('contact-us', function()
-{
-    // Return about us page
-    return View::make('site/contact-us');
-});
-
-# Posts - Second to last set, match slug
-Route::get('{postSlug}', 'BlogController@getView');
-Route::post('{postSlug}', 'BlogController@postView');
-
-# Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));

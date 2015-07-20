@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('admin1.dashboard')
 
 {{-- Web site Title --}}
 @section('title')

@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('admin1.dashboard')
 
 {{-- Web site Title --}}
 @section('title')
@@ -48,7 +48,7 @@
 		        "bServerSide": true,
 		        "sAjaxSource": "{{ URL::to('admin/users/data') }}",
 		        "fnDrawCallback": function ( oSettings ) {
-	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+//	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
 	     		}
 			});
 		});

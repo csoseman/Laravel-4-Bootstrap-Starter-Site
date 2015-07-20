@@ -47,7 +47,7 @@ return array(
     |
     |
     */
-    'login_form' =>             'site.partials.user.login',
+    'login_form' =>             'site.partials.user.login_new',
     'signup_form' =>            'site.partials.user.signup',
     'forgot_password_form' =>   'site.partials.user.forgot_password',
     'reset_password_form' =>    'site.partials.user.reset_password',

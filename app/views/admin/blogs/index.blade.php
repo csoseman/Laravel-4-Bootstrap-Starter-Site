@@ -13,10 +13,8 @@
 @section('content')
 	<div class="page-header">
 		<h3>
-			{{{ $title }}}
-
 			<div class="pull-right">
-				<a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+				<a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create New Post</a>
 			</div>
 		</h3>
 	</div>
@@ -49,9 +47,9 @@
 				"bProcessing": true,
 		        "bServerSide": true,
 		        "sAjaxSource": "{{ URL::to('admin/blogs/data') }}",
-		        "fnDrawCallback": function ( oSettings ) {
-	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-	     		}
+//		        "fnDrawCallback": function ( oSettings ) {
+//	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+//	     		}
 			});
 		});
 	</script>

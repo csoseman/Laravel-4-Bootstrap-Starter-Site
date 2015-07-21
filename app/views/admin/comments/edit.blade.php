@@ -1,5 +1,4 @@
-@extends('admin/layouts/modal')
-
+@extends('admin1.dashboard')
 {{-- Content --}}
 @section('content')
 	<!-- Tabs -->

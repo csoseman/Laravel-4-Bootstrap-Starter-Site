@@ -1,1 +1,1 @@
-@extends('site.layouts.default')
+@extends('admin1.dashboard')

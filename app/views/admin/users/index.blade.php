@@ -9,7 +9,7 @@
 @section('content')
 	<div class="page-header">
 		<h3>
-			{{{ $title }}}
+			{{--{{{ $title }}}--}}
 
 			<div class="pull-right">
 				<a href="{{{ URL::to('admin/users/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>

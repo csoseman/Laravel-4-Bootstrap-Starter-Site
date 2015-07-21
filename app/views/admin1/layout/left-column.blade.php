@@ -32,30 +32,30 @@
         <ul class="sidebar-menu">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class='fa fa-link'></i> <span>Link</span></a></li>
-            <li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/blogs') }}}"><span class="glyphicon glyphicon-list-alt"></span> Blog</a></li>
-            <li{{ (Request::is('admin/comments*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/comments') }}}"><span class="glyphicon glyphicon-bullhorn"></span> Comments</a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
-            </li>
+            {{--<li class="active"><a href="#"><i class='fa fa-link'></i> <span>Link</span></a></li>--}}
+            <li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/blogs') }}}"><i class="glyphicon glyphicon-list-alt"></i> <span>Blog</span></a></li>
+            <li{{ (Request::is('admin/comments*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/comments') }}}"><i class="glyphicon glyphicon-bullhorn"></i> <span>Comments</span></a></li>
+            {{--<li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>--}}
+            {{--<li class="treeview">--}}
+                {{--<a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>--}}
+                {{--<ul class="treeview-menu">--}}
+                    {{--<li><a href="#">Link in level 2</a></li>--}}
+                    {{--<li><a href="#">Link in level 2</a></li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
             <li class="header">ADMIN</li>
             <!-- Optionally, you can add icons to the links -->
             {{--<li class="active"><a href="/admin/users"><i class='fa fa-link'></i><span>Users</span></a></li>--}}
             <li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/users') }}}"><span class="glyphicon glyphicon-user"></span> Users</a></li>
             <li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/roles') }}}"><span class="glyphicon glyphicon-user"></span> Roles</a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>Groups</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
-            </li>
+            {{--<li class="treeview">--}}
+                {{--<a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>--}}
+                {{--<ul class="treeview-menu">--}}
+                    {{--<li><a href="#">Link in level 2</a></li>--}}
+                    {{--<li><a href="#">Link in level 2</a></li>--}}
+                {{--</ul>--}}
+            {{--</li>--}}
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

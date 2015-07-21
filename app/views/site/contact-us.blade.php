@@ -1,4 +1,4 @@
-@extends('site.layouts.default')
+@extends('admin1.dashboard')
 {{-- Web site Title --}}
 @section('title')
 {{{ Lang::get('site.contact_us') }}} ::

@@ -9,8 +9,6 @@
 @section('content')
 	<div class="page-header">
 		<h3>
-			Role Management
-
 			<div class="pull-right">
 				<a href="{{{ URL::to('admin/roles/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
 			</div>
@@ -45,9 +43,9 @@
 				"bProcessing": true,
 		        "bServerSide": true,
 		        "sAjaxSource": "{{ URL::to('admin/roles/data') }}",
-		        "fnDrawCallback": function ( oSettings ) {
-	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-	     		}
+//		        "fnDrawCallback": function ( oSettings ) {
+//	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+//	     		}
 			});
 		});
 	</script>

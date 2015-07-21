@@ -8,9 +8,9 @@
 {{-- Content --}}
 @section('content')
 	<div class="page-header">
-		<h3>
-			{{{ $title }}}
-		</h3>
+		{{--<h3>--}}
+			{{--{{{ $title }}}--}}
+		{{--</h3>--}}
 	</div>
 
 	<table id="comments" class="table table-striped table-hover">
@@ -40,9 +40,9 @@
 				"bProcessing": true,
 		        "bServerSide": true,
 		        "sAjaxSource": "{{ URL::to('admin/comments/data') }}",
-		        "fnDrawCallback": function ( oSettings ) {
-	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
-	     		}
+//		        "fnDrawCallback": function ( oSettings ) {
+//	           		$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+//	     		}
 			});
 		});
 	</script>

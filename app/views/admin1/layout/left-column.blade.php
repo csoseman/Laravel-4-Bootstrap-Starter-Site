@@ -30,11 +30,14 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">SYSTEM RESOURCES</li>
             <!-- Optionally, you can add icons to the links -->
             {{--<li class="active"><a href="#"><i class='fa fa-link'></i> <span>Link</span></a></li>--}}
+            <li{{ (Request::is('/*') ? ' class="active"' : '') }}><a href="{{{ URL::to('/') }}}"><i class='fa fa-dashboard'></i> <span>Dashboard</span></a></li>
             <li{{ (Request::is('admin/blogs*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/blogs') }}}"><i class="glyphicon glyphicon-list-alt"></i> <span>Blog</span></a></li>
             <li{{ (Request::is('admin/comments*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/comments') }}}"><i class="glyphicon glyphicon-bullhorn"></i> <span>Comments</span></a></li>
+            <li{{ (Request::is('app/bug*') ? ' class="active"' : '') }}><a href="#"><i class='fa fa-bug'></i> <span>Report a Bug</span></a></li>
+            <li{{ (Request::is('app/faq*') ? ' class="active"' : '') }}><a href="#"><i class='fa fa-question'></i> <span>FAQs</span></a></li>
             {{--<li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>--}}
             {{--<li class="treeview">--}}
                 {{--<a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>--}}
@@ -46,9 +49,9 @@
             <li class="header">ADMIN</li>
             <!-- Optionally, you can add icons to the links -->
             {{--<li class="active"><a href="/admin/users"><i class='fa fa-link'></i><span>Users</span></a></li>--}}
-            <li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/users') }}}"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-            <li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/roles') }}}"><span class="glyphicon glyphicon-user"></span> Roles</a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>Groups</span></a></li>
+            <li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/users') }}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+            <li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('admin/roles') }}}"><i class="fa fa-users"></i> <span>Groups</span></a></li>
+            {{--<li><a href="#"><i class='fa fa-link'></i> <span>Groups</span></a></li>--}}
             {{--<li class="treeview">--}}
                 {{--<a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>--}}
                 {{--<ul class="treeview-menu">--}}

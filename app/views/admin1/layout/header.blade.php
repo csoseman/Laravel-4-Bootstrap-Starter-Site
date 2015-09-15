@@ -4,9 +4,14 @@
     <!-- Logo -->
     <a href="/" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini">
+            <b>
+                {{ substr(Lang::get('site.app_name_fat'), 0, 1) }}
+            </b>
+            {{ substr(Lang::get('site.app_name_skinny'), 0, 1) }}
+        </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>{{ Lang::get('site.app_name_fat') }}</b>{{ Lang::get('site.app_name_skinny') }}</span>
     </a>
 
     <!-- Header Navbar -->

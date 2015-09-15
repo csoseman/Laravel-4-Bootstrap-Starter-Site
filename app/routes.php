@@ -10,6 +10,17 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+// Testing (Only for use in the local environment)
+Route::get('test', function() {
+    if(App::environment('local'))
+    {
+        return 'Hello!';
+    } else {
+        return 'This feature can only be used in a development environment';
+    }
+});
+
 Route::group(['before' => 'auth'], function(){
     Route::get('adm', function () {
         //return "hello world!";

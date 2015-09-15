@@ -19,7 +19,8 @@
                 <div class="alert">{{ Session::get('notice') }}</div>
             @endif
             <div class="account-wall">
-                {{ HTML::image('images/claas-iris-horus.png') }}
+                {{--{{ HTML::image('assets/img/claas-easy-icon-transparent.png', null, ['width' => '280']) }}--}}
+                <h2>{{ Lang::get('site.app_name_full') }}</h2>
                 {{ Form::open(["class" => "form-signin", "url" => "user/login", "accept-charset" => "UTF-8"]) }}
                 {{ Form::token() }}
                 {{ Form::text('email', "" , ['class' => 'form-control', 'required', 'autofocus', 'placeholder' => Lang::get('user/user.e_mail'), 'tabindex' => 1 ])}}

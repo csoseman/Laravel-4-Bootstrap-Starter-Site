@@ -28,7 +28,13 @@
     "ionicons": "~2.0.1",
     "font-awesome": "~4.3.0",
     "html5shiv": "~3.7.2",
-    "respond": "~1.4.2"
+    "respond": "~1.4.2",
+    "colorbox": "~1.6.3",
+    "select2-bootstrap-css": "~1.4.6",
+    "jquery-knob": "~1.2.11",
+    "code-prettify": "*",
+    "raphael": "~2.1.4",
+    "bootstrap-datepicker": "~1.4.1"
   },
   "description": "This package contains other packages that are used on a regular basis",
   "keywords": [

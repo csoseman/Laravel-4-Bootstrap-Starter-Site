@@ -11,26 +11,33 @@
 
 {{-- Content --}}
 @section('content')
-	<div class="page-header">
-		<h3>
-			<div class="pull-right">
-				<a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create New Post</a>
-			</div>
-		</h3>
-	</div>
-
-	<table id="blogs" class="table table-striped table-hover">
-		<thead>
-			<tr>
-				<th class="col-md-4">{{{ Lang::get('admin/blogs/table.title') }}}</th>
-				<th class="col-md-2">{{{ Lang::get('admin/blogs/table.comments') }}}</th>
-				<th class="col-md-2">{{{ Lang::get('admin/blogs/table.created_at') }}}</th>
-				<th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
+    <div class="box box-primary">
+        <div class="box-header">
+            <div class="pull-right box-tools">
+                <a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-primary btn-sm iframe">
+                    <span class="fa fa-plus-circle"></span> Create New Post
+                </a>
+                <a href="#" onClick="oTable.fnReloadAjax()" class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i></a>
+            </div>
+            <i class="fa fa-user"></i>
+            <h3 class="box-title">Blog Posts</h3>
+        </div>
+        <div class="box-body">
+            <table id="blogs" class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="col-md-4">{{{ Lang::get('admin/blogs/table.title') }}}</th>
+                    <th class="col-md-2">{{{ Lang::get('admin/blogs/table.comments') }}}</th>
+                    <th class="col-md-2">{{{ Lang::get('admin/blogs/table.created_at') }}}</th>
+                    <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            </table>
+        </div>
+    </div>
 @stop
 
 {{-- Scripts --}}
@@ -40,7 +47,7 @@
 		$(document).ready(function() {
 			oTable = $('#blogs').dataTable( {
 				"sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
-				"sPaginationType": "bootstrap",
+//				"sPaginationType": "bootstrap",
 				"oLanguage": {
 					"sLengthMenu": "_MENU_ records per page"
 				},

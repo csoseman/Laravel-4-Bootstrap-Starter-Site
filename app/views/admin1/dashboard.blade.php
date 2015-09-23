@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     {{ HTML::style('packages/bower_components/select2/select2.css') }}
     {{ HTML::style('packages/bower_components/select2/select2-bootstrap.css') }}
     <!-- Datatables style -->
-    {{ HTML::style('packages/bower_components/datatables/media/css/jquery.dataTables.min.css') }}
+    {{ HTML::style('packages/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}
 
     <style>
         .breadcrumb {margin-bottom: 0}
@@ -134,6 +134,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </script>
 <!-- Bootstrap 3.3.5 JS -->
 {{ HTML::script('packages/bower_components/bootstrap/dist/js/bootstrap.min.js') }}
+<!-- DataTables -->
+{{ HTML::script('packages/bower_components/datatables/media/js/jquery.dataTables.js') }}
+{{ HTML::script('packages/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js') }}
+{{ HTML::script('packages/bower_components/datatables-plugins/api/fnReloadAjax.js') }}
 <!-- Morris.js charts -->
 {{ HTML::script('packages/bower_components/raphael/raphael-min.js') }}
 {{ HTML::script('packages/bower_components/admin-lte/plugins/morris/morris.min.js') }}
@@ -155,19 +159,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 {{ HTML::script('/packages/bower_components/admin-lte/plugins/fastclick/fastclick.js') }}
 <!-- AdminLTE App -->
 {{ HTML::script('packages/bower_components/admin-lte/dist/js/app.min.js') }}
-<!-- AdminLTE Demo Only -->
-{{ HTML::script('packages/bower_components/admin-lte/dist/js/pages/dashboard.js') }}
-{{ HTML::script('packages/bower_components/admin-lte/dist/js/demo.js') }}
 <!-- iCheck -->
 {{ HTML::script('packages/bower_components/admin-lte/plugins/iCheck/icheck.js') }}
 <!-- jQuery Input Mask -->
 {{ HTML::script('packages/bower_components/admin-lte/plugins/input-mask/jquery.inputmask.js') }}
 {{ HTML::script('packages/bower_components/admin-lte/plugins/input-mask/jquery.inputmask.date.extensions.js') }}
 {{ HTML::script('packages/bower_components/admin-lte/plugins/input-mask/jquery.inputmask.extensions.js') }}
-<!-- DataTables -->
-{{ HTML::script('packages/bower_components/datatables/media/js/jquery.dataTables.js') }}
-{{ HTML::script('packages/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js') }}
-{{ HTML::script('packages/bower_components/datatables-plugins/api/fnReloadAjax.js') }}
 <!-- Select2 -->
 {{ HTML::script('packages/bower_components/select2/select2.js') }}
 <!-- ColorBox -->
@@ -185,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="daterangepicker dropdown-menu opensleft"><div class="calendar first left"><div class="calendar-date"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-arrow-left icon icon-arrow-left glyphicon glyphicon-arrow-left"></i></th><th colspan="5" class="month">Aug 2015</th><th class="next available"><i class="fa fa-arrow-right icon icon-arrow-right glyphicon glyphicon-arrow-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="available off" data-title="r0c0">26</td><td class="available off" data-title="r0c1">27</td><td class="available off" data-title="r0c2">28</td><td class="available off" data-title="r0c3">29</td><td class="available off" data-title="r0c4">30</td><td class="available off" data-title="r0c5">31</td><td class="available" data-title="r0c6">1</td></tr><tr><td class="available" data-title="r1c0">2</td><td class="available" data-title="r1c1">3</td><td class="available" data-title="r1c2">4</td><td class="available" data-title="r1c3">5</td><td class="available" data-title="r1c4">6</td><td class="available" data-title="r1c5">7</td><td class="available" data-title="r1c6">8</td></tr><tr><td class="available" data-title="r2c0">9</td><td class="available" data-title="r2c1">10</td><td class="available" data-title="r2c2">11</td><td class="available" data-title="r2c3">12</td><td class="available" data-title="r2c4">13</td><td class="available" data-title="r2c5">14</td><td class="available" data-title="r2c6">15</td></tr><tr><td class="available" data-title="r3c0">16</td><td class="available" data-title="r3c1">17</td><td class="available" data-title="r3c2">18</td><td class="available" data-title="r3c3">19</td><td class="available" data-title="r3c4">20</td><td class="available" data-title="r3c5">21</td><td class="available" data-title="r3c6">22</td></tr><tr><td class="available active start-date" data-title="r4c0">23</td><td class="available in-range" data-title="r4c1">24</td><td class="available in-range" data-title="r4c2">25</td><td class="available in-range" data-title="r4c3">26</td><td class="available in-range" data-title="r4c4">27</td><td class="available in-range" data-title="r4c5">28</td><td class="available in-range" data-title="r4c6">29</td></tr><tr><td class="available in-range" data-title="r5c0">30</td><td class="available in-range" data-title="r5c1">31</td><td class="available off in-range" data-title="r5c2">1</td><td class="available off in-range" data-title="r5c3">2</td><td class="available off in-range" data-title="r5c4">3</td><td class="available off in-range" data-title="r5c5">4</td><td class="available off in-range" data-title="r5c6">5</td></tr></tbody></table></div></div><div class="calendar second right"><div class="calendar-date"><table class="table-condensed"><thead><tr><th class="prev available"><i class="fa fa-arrow-left icon icon-arrow-left glyphicon glyphicon-arrow-left"></i></th><th colspan="5" class="month">Sep 2015</th><th class="next available"><i class="fa fa-arrow-right icon icon-arrow-right glyphicon glyphicon-arrow-right"></i></th></tr><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td class="available off in-range" data-title="r0c0">30</td><td class="available off in-range" data-title="r0c1">31</td><td class="available in-range" data-title="r0c2">1</td><td class="available in-range" data-title="r0c3">2</td><td class="available in-range" data-title="r0c4">3</td><td class="available in-range" data-title="r0c5">4</td><td class="available in-range" data-title="r0c6">5</td></tr><tr><td class="available in-range" data-title="r1c0">6</td><td class="available in-range" data-title="r1c1">7</td><td class="available in-range" data-title="r1c2">8</td><td class="available in-range" data-title="r1c3">9</td><td class="available in-range" data-title="r1c4">10</td><td class="available in-range" data-title="r1c5">11</td><td class="available in-range" data-title="r1c6">12</td></tr><tr><td class="available in-range" data-title="r2c0">13</td><td class="available in-range" data-title="r2c1">14</td><td class="available in-range" data-title="r2c2">15</td><td class="available in-range" data-title="r2c3">16</td><td class="available in-range" data-title="r2c4">17</td><td class="available in-range" data-title="r2c5">18</td><td class="available in-range" data-title="r2c6">19</td></tr><tr><td class="available in-range" data-title="r3c0">20</td><td class="available active end-date" data-title="r3c1">21</td><td class="available" data-title="r3c2">22</td><td class="available" data-title="r3c3">23</td><td class="available" data-title="r3c4">24</td><td class="available" data-title="r3c5">25</td><td class="available" data-title="r3c6">26</td></tr><tr><td class="available" data-title="r4c0">27</td><td class="available" data-title="r4c1">28</td><td class="available" data-title="r4c2">29</td><td class="available" data-title="r4c3">30</td><td class="available off" data-title="r4c4">1</td><td class="available off" data-title="r4c5">2</td><td class="available off" data-title="r4c6">3</td></tr><tr><td class="available off" data-title="r5c0">4</td><td class="available off" data-title="r5c1">5</td><td class="available off" data-title="r5c2">6</td><td class="available off" data-title="r5c3">7</td><td class="available off" data-title="r5c4">8</td><td class="available off" data-title="r5c5">9</td><td class="available off" data-title="r5c6">10</td></tr></tbody></table></div></div><div class="ranges"><ul><li>Today</li><li>Yesterday</li><li>Last 7 Days</li><li class="active">Last 30 Days</li><li>This Month</li><li>Last Month</li><li>Custom Range</li></ul><div class="range_inputs"><div class="daterangepicker_start_input"><label for="daterangepicker_start">From</label><input class="input-mini" name="daterangepicker_start" value="" type="text"></div><div class="daterangepicker_end_input"><label for="daterangepicker_end">To</label><input class="input-mini" name="daterangepicker_end" value="" type="text"></div><button class="applyBtn btn btn-small btn-sm btn-success">Apply</button>&nbsp;<button class="cancelBtn btn btn-small btn-sm btn-default">Cancel</button></div></div></div>
     <div class="jvectormap-label"></div>
-@yield('scripts')
+
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
@@ -211,5 +208,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('.dataTable th').addClass('bg-blue');
         });
     </script>
+    @yield('scripts')
 </body>
 </html>

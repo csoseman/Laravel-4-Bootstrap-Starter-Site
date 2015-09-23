@@ -1,5 +1,9 @@
 @extends('admin1.dashboard')
-
+@section('scripts')
+    <!-- AdminLTE Demo Only -->
+    {{ HTML::script('packages/bower_components/admin-lte/dist/js/pages/dashboard.js') }}
+    {{ HTML::script('packages/bower_components/admin-lte/dist/js/demo.js') }}
+@stop
 {{-- Content --}}
 @section('content')
     <!-- Small boxes (Stat box) -->

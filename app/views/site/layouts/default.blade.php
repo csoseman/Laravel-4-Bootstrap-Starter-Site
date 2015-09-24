@@ -65,12 +65,6 @@
 
         </div>
 
-	    {{-- Fixed Footer --}}
-        <footer class="footer navbar-inverse">
-	      <div class="container">
-	        <p class="text-muted">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>
-	      </div>
-        </footer>
         @include('site.layouts.js-foot')
         {{-- !!!Should be taken out!!! --}}
         @yield('scripts')

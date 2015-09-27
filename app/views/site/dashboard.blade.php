@@ -1,4 +1,4 @@
-@extends('admin1.dashboard')
+@extends('admin.dashboard')
 @section('scripts')
     <!-- AdminLTE Demo Only -->
     {{ HTML::script('packages/bower_components/admin-lte/dist/js/pages/dashboard.js') }}

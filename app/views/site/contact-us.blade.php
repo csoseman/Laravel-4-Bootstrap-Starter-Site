@@ -1,4 +1,4 @@
-@extends('admin1.dashboard')
+@extends('admin.dashboard')
 {{-- Web site Title --}}
 @section('title')
 {{{ Lang::get('site.contact_us') }}} ::

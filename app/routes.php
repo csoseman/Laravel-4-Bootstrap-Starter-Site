@@ -24,7 +24,7 @@ Route::get('test', function() {
 Route::group(['before' => 'auth'], function(){
     Route::get('adm', function () {
         //return "hello world!";
-        return View::make('admin1/dashboard');
+        return View::make('admin/dashboard');
     });
     /** ------------------------------------------
      *  Route model binding

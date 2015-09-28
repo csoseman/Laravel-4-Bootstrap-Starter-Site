@@ -217,7 +217,7 @@ class UserController extends BaseController {
     public function getReset( $token )
     {
 
-        return View::make('site/partials/user/reset_password_new')
+        return View::make('site/partials/user/reset_password')
             ->with('token',$token);
     }
 

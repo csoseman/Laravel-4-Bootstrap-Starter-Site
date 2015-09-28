@@ -66,7 +66,7 @@ class UserController extends BaseController {
         } else {
             $error = $user->errors()->all(':message');
 
-            return Redirect::to('user/create')
+            return Redirect::back()
                 ->withInput(Input::except('password'))
                 ->with('error', $error);
         }
@@ -200,11 +200,11 @@ class UserController extends BaseController {
     {
         if (Confide::forgotPassword(Input::get('email'))) {
             $notice_msg = Lang::get('confide::confide.alerts.password_forgot');
-            return Redirect::to('user/forgot')
+            return Redirect::back()
                 ->with('notice', $notice_msg);
         } else {
             $error_msg = Lang::get('confide::confide.alerts.wrong_password_forgot');
-            return Redirect::to('user/login')
+            return Redirect::back()
                 ->withInput()
                 ->with('error', $error_msg);
         }
@@ -217,7 +217,7 @@ class UserController extends BaseController {
     public function getReset( $token )
     {
 
-        return View::make('site/user/reset')
+        return View::make('site/partials/user/reset_password_new')
             ->with('token',$token);
     }
 
@@ -242,7 +242,8 @@ class UserController extends BaseController {
                 ->with('notice', $notice_msg);
         } else {
             $error_msg = Lang::get('confide::confide.alerts.wrong_password_reset');
-            return Redirect::to('user/reset', array('token'=>$input['token']))
+            return Redirect::back()
+                ->with('token', $input['token'])
                 ->withInput()
                 ->with('error', $error_msg);
         }

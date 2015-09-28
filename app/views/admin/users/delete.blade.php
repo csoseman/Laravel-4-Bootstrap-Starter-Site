@@ -19,7 +19,7 @@
         <div class="form-group">
             <div class="controls">
                 <a href="{{ URL::to('admin/users') }}"><button type="button" class="btn btn-primary col-md-5 pull-left">No, return me to safety.</button></a>
-                <button type="submit" class="btn btn-danger col-md-5 pull-right">Yes, delete </strong>{{ $user->username }}.</button>
+                <button type="submit" class="btn btn-danger col-md-5 pull-right">Yes, delete <strong>{{ $user->username }}</strong>.</button>
             </div>
         </div>
         <!-- ./ form actions -->

@@ -19,6 +19,7 @@ class AddNameToUsersTable extends Migration {
             $table->string('last_name');
             $table->integer('confirmed_by');
             $table->text('notes');
+            $table->text('justification');
         });
 	}
 
@@ -36,6 +37,7 @@ class AddNameToUsersTable extends Migration {
             $table->dropColumn('last_name');
             $table->dropColumn('confirmed_by');
             $table->dropColumn('notes');
+            $table->dropColumn('justification');
         });
 	}
 

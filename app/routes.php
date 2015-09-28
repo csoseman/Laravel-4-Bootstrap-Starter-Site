@@ -125,6 +125,9 @@ Route::get('forgot', 'UserController@getForgot');
 //:: User Account Routes ::
 Route::post('user/login', 'UserController@postLogin');
 
+// Register User
+Route::post('user/create', 'UserController@postIndex');
+
 # User RESTful Routes (Login, Logout, Register, etc)
 Route::controller('user', 'UserController');
 

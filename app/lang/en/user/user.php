@@ -21,6 +21,8 @@ return array(
 	'user_account_updated'          => 'User Account updated.',
 	'user_account_created'          => 'User Account created.',
 
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
     'username' => 'Username',
     'password' => 'Password',
     'password_confirmation' => 'Confirm Password',

@@ -39,7 +39,6 @@
             <div class="alert">{{{ Session::get('notice') }}}</div>
         @endif
         <div class="account-wall">
-            {{--{{ HTML::image('images/claas-iris-horus.png') }}--}}
             <h2>Register an Account</h2>
             {{ Form::open(["class" => "form-signin", "url" => "user", "accept-charset" => "UTF-8"]) }}
             {{ Form::token() }}

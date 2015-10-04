@@ -13,6 +13,26 @@
                 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                 <!-- ./ csrf token -->
 
+                <!-- first name -->
+                <div class="form-group {{{ $errors->has('first_name') ? 'error' : '' }}}">
+                    <label class="col-md-2 control-label" for="username">First Name</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="first_name" id="first_name" value="{{{ Input::old('first_name', isset($user) ? $user->first_name : null) }}}" />
+                        {{ $errors->first('first_name', '<span class="help-inline">:message</span>') }}
+                    </div>
+                </div>
+                <!-- ./ first name -->
+
+                <!-- last name -->
+                <div class="form-group {{{ $errors->has('last_name') ? 'error' : '' }}}">
+                    <label class="col-md-2 control-label" for="username">Last Name</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" name="last_name" id="last_name" value="{{{ Input::old('last_name', isset($user) ? $user->last_name : null) }}}" />
+                        {{ $errors->first('last_name', '<span class="help-inline">:message</span>') }}
+                    </div>
+                </div>
+                <!-- ./ last name -->
+
                 <!-- username -->
                 <div class="form-group {{{ $errors->has('username') ? 'error' : '' }}}">
                     <label class="col-md-2 control-label" for="username">Username</label>

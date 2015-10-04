@@ -189,6 +189,8 @@ class AdminUsersController extends AdminController {
     public function postEdit($user)
     {
         $oldUser = clone $user;
+        $user->first_name = Input::get( 'first_name' );
+        $user->last_name = Input::get( 'last_name' );
         $user->username = Input::get( 'username' );
         $user->email = Input::get( 'email' );
         $user->confirmed = Input::get( 'confirm' );

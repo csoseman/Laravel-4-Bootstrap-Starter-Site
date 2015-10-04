@@ -112,4 +112,9 @@ class User extends Eloquent implements ConfideUserInterface {
         return $this->email;
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany('Role','assigned_roles');
+    }
+
 }

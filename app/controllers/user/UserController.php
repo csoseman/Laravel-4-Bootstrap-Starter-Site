@@ -266,10 +266,13 @@ class UserController extends BaseController {
      * @param $username
      * @return mixed
      */
-    public function getProfile($username)
+    public function getProfile()
     {
-        $userModel = new User;
-        $user = $userModel->getUserByUsername($username);
+        $user_id = Auth::user()->id;
+        //$user = User::findOrFail($user_id)->with(['roles', 'roles.permissions'])->first();
+        $user = User::where('id', $user_id)->with(['roles.permissions'])->get()->first();
+        //return $user;
+        $mode = 'edit';
 
         // Check if the user exists
         if (is_null($user))
@@ -277,7 +280,7 @@ class UserController extends BaseController {
             return App::abort(404);
         }
 
-        return View::make('site/user/profile', compact('user'));
+        return View::make('admin/users/profile', compact('user', 'mode'));
     }
 
     public function getSettings()

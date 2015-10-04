@@ -15,7 +15,8 @@
 Route::get('test', function() {
     if(App::environment('local'))
     {
-        return 'Hello!';
+        //return 'Hello!';
+        return User::find(1)->with('roles', 'roles.permissions')->get();
     } else {
         return 'This feature can only be used in a development environment';
     }
@@ -105,6 +106,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 
     # Admin Dashboard
     Route::controller('/', 'AdminDashboardController');
+});
+
+Route::group(['before' => 'auth.basic'], function() {
+    Route::get('user/profile', 'UserController@getProfile');
 });
 
 

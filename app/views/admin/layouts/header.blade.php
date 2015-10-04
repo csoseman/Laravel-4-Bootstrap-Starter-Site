@@ -146,7 +146,8 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                {{--<a href="#" class="btn btn-default btn-flat">Profile</a>--}}
+                                <a href="{{{ URL::to('user/profile') }}}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 <a href="{{{ URL::to('user/logout') }}}" class="btn btn-default btn-flat">Sign out</a>

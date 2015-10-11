@@ -283,6 +283,36 @@ class UserController extends BaseController {
         return View::make('admin/users/profile', compact('user', 'mode'));
     }
 
+    /**
+     * Changes user's profile information (for now just changes their password if that is entered)
+     * @param $username
+     * @return mixed
+     */
+    public function postProfile()
+    {
+        $current_user = Auth::id();
+        $submitted_user = Input::get('id');
+
+        $password = Input::get( 'password' );
+        $passwordConfirmation = Input::get( 'password_confirmation' );
+
+        if(!empty($password) && $current_user === $submitted_user) {
+            if($password === $passwordConfirmation) {
+                $user = $this->user->findOrFail($submitted_user);
+                // Need to have both passwords due to Ardent's validation feature
+                $user->password = $password;
+                $user->password_confirmation = $passwordConfirmation;
+                $user->save();
+                return Redirect::to('user/profile')->with('success', Lang::get('user/user.alerts.password_reset'));
+            } else {
+                // Redirect to the new user page
+                return Redirect::to('user/profile')->with('error', Lang::get('admin/users/messages.password_does_not_match'));
+            }
+        } else {
+            return Redirect::to('user/profile');
+        }
+    }
+
     public function getSettings()
     {
         list($user,$redirect) = User::checkAuthAndRedirect('user/settings');

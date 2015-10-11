@@ -7,11 +7,12 @@
                 <h3 class="box-title">User Profile</h3>
             </div><!-- /.box-header -->
             {{-- Create User Form --}}
-            <form class="form-horizontal" method="post" action="@if (isset($user)){{ URL::to('admin/users/' . $user->id . '/edit') }}@endif" autocomplete="off">
+            <form class="form-horizontal" method="post" action="" autocomplete="off">
             <div class="box-body">
                 <!-- CSRF Token -->
                 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                 <!-- ./ csrf token -->
+                {{ Form::hidden('id', $user->id) }}
 
                 <!-- first name -->
                 <div class="form-group {{{ $errors->has('first_name') ? 'error' : '' }}}">

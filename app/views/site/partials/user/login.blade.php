@@ -24,22 +24,40 @@
                         {{ $errors->first('login', ":message") }}
                     </div>
                 @endif
-
-                @if ( Session::get('error') )
-                    <div class="callout callout-danger alert-dismissable">
-                        <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                    @if ( Session::get('error') )
+                        <div class="callout callout-danger alert-dismissable">
+                            <h4><i class="icon fa fa-ban"></i> Error!</h4>
+                            {{-- Foreach loop has to be implement for user registration errors --}}
+                            @if(count(Session::get('error')))
+                                <ul>
+                                    @if(is_array(Session::get('error')))
+                                        @foreach(Session::get('error') as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    @else
+                                        <li>{{ Session::get('error') }}</li>
+                                    @endif
+                                </ul>
+                            @else
+                                {{ Session::get('error') }}
+                            @endif
+                        </div>
+                    @endif
+                {{--@if ( Session::get('error') )--}}
+                    {{--<div class="callout callout-danger alert-dismissable">--}}
+                        {{--<h4><i class="icon fa fa-ban"></i> Error!</h4>--}}
                         {{-- Foreach loop has to be implement for user registration errors --}}
-                        @if(count(Session::get('error')))
-                            <ul>
-                                @foreach(Session::get('error') as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @else
-                            {{ Session::get('error') }}
-                        @endif
-                    </div>
-                @endif
+                        {{--@if(count(Session::get('error')))--}}
+                            {{--<ul>--}}
+                                {{--@foreach(Session::get('error') as $error)--}}
+                                    {{--<li>{{ $error }}</li>--}}
+                                {{--@endforeach--}}
+                            {{--</ul>--}}
+                        {{--@else--}}
+                            {{--{{ Session::get('error') }}--}}
+                        {{--@endif--}}
+                    {{--</div>--}}
+                {{--@endif--}}
 
                 @if ( Session::get('notice') )
                     <div class="callout callout-warning alert-dismissable">

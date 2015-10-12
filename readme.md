@@ -135,7 +135,11 @@ Now that you have the environment configured, you need to create a database conf
 In the same fashion, copy the ***app/config/mail.php*** configuration file in ***app/config/local/mail.php***. Now set the `address` and `name` from the `from` array in ***config/mail.php***. Those will be used to send account confirmation and password reset emails to the users.
 If you don't set that registration will fail because it cannot send the confirmation email.
 
-### Step 6: Populate Database
+### Step 6: Configure FTP Connections (Optional)
+
+If you have any FTP connections that will need to be made in your app, edit those configurations in ***app/config/packages/anchu/ftp/config.php***. Make sure your `default` connection is set correctly as well.
+
+### Step 7: Populate Database
 Run these commands to create and populate Users table:
 
 ```bash
@@ -143,7 +147,7 @@ $ php artisan migrate
 $ php artisan db:seed
 ```
 
-### Step 7: Set Encryption Key
+### Step 8: Set Encryption Key
 ***In app/config/app.php***
 
 ```
@@ -171,7 +175,7 @@ $ php artisan key:generate --env=local
 
 The `--env` option allows defining which environment you would like to apply the key generation. In our case, artisan generates your key in ***app/config/local/app.php*** and leaves ***'YourSecretKey!!!'*** in ***app/config/app.php***. Now it can be generated again when you move the project to another environment.
 
-### Step 8: Make sure app/storage is writable by your web server.
+### Step 9: Make sure app/storage is writable by your web server.
 
 If permissions are set correctly:
 
@@ -185,7 +189,7 @@ Should work, if not try
 $ chmod -R 777 app/storage
 ```
 
-### Step 9: Start Page (Three options for proceeding)
+### Step 10: Start Page (Three options for proceeding)
 
 ### User login with commenting permission
 Navigate to your Laravel 4 website and login at /user/login:

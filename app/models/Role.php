@@ -21,7 +21,7 @@ class Role extends EntrustRole {
         return $roleValidation;
     }
 
-    public function permissions()
+    public function perms()
     {
         return $this->belongsToMany('Permission', Config::get('entrust::permission_role_table'));
     }

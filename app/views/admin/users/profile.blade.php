@@ -90,9 +90,11 @@
                                 <tr>
                                     <td>{{ $role->name }}</td>
                                     <td>
-                                        @foreach($role->permissions as $permissions)
-                                            {{ $permissions->display_name }}
+                                        <ul>
+                                        @foreach($role->perms as $permission)
+                                            <li>{{ $permission->display_name }}</li>
                                         @endforeach
+                                        </ul>
                                     </td>
                                 </tr>
                             @endforeach

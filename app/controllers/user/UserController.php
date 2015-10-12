@@ -299,7 +299,7 @@ class UserController extends BaseController {
     {
         $user_id = Auth::user()->id;
         //$user = User::findOrFail($user_id)->with(['roles', 'roles.permissions'])->first();
-        $user = User::where('id', $user_id)->with(['roles.permissions'])->get()->first();
+        $user = User::where('id', $user_id)->with(['roles.perms'])->first();
         //return $user;
         $mode = 'edit';
 

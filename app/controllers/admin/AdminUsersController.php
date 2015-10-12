@@ -215,6 +215,21 @@ class AdminUsersController extends AdminController {
             $user->confirmed = $oldUser->confirmed;
         }
 
+        // If user is now confirmed but wasn't previously, send them an email letting them know they have been confirmed
+        if($user->confirmed == 1 && $oldUser->confirmed == 0)
+        {
+            Mail::queueOn(
+                Config::get('confide::email_queue'),
+                Config::get('confide::email_account_confirmation'),
+                compact('user'),
+                function ($message) use ($user) {
+                    $message
+                        ->to($user->email, $user->first_name . " " . $user->last_name)
+                        ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+                }
+            );
+        }
+
         if ($user->save()) {
             // Save roles. Handles updating.
             $user->saveRoles(Input::get( 'roles' ));

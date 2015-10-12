@@ -25,4 +25,9 @@ class Role extends EntrustRole {
     {
         return $this->belongsToMany('Permission', Config::get('entrust::permission_role_table'));
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('User', Config::get('entrust::assigned_roles_table'));
+    }
 }

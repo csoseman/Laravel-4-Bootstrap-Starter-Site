@@ -1,10 +1,13 @@
 <h1>{{ Lang::get('confide::confide.email.account_confirmation.subject') }}</h1>
 
-<p>{{ Lang::get('confide::confide.email.account_confirmation.greetings', array('name' => $user['username'])) }},</p>
+<p>Hello {{ $user['first_name'] }},</p>
 
-<p>{{ Lang::get('confide::confide.email.account_confirmation.body') }}</p>
-<a href='{{{ URL::to("user/confirm/{$user['confirmation_code']}") }}}'>
-    {{{ URL::to("user/confirm/{$user['confirmation_code']}") }}}
-</a>
+<p>
+    Your account request has been approved. You can log in by
+    <a  href="{{ URL::to("/user/login") }}">clicking here</a>.
+</p>
 
-<p>{{ Lang::get('confide::confide.email.account_confirmation.farewell') }}</p>
+<p>
+    {{ Lang::get('confide::confide.email.sent_to_admin.farewell') }}, <br>
+    {{ Lang::get('site.app_name_full') . " Team"}}
+</p>

@@ -47,22 +47,51 @@ class UserController extends BaseController {
     {
         $user = $this->userRepo->signup(Input::all());
 
+        // If the user's registration was successful, send an email to all administrators
+        // to let them know that a user has registered and is waiting for approval.
+
+        // 1. Get a list of all admin users
+        $admin_users = Role::find(1)->users()->get();
+        $admin_emails = '';
+
+        foreach($admin_users as $auser)
+        {
+            $admin_emails[] = $auser->email;
+        }
+
         if ($user->id) {
             if (Config::get('confide::signup_email')) {
+                // Send confirmation email to user
                 Mail::queueOn(
                     Config::get('confide::email_queue'),
-                    Config::get('confide::email_account_confirmation'),
+                    Config::get('confide::email_account_request'),
                     compact('user'),
-                    function ($message) use ($user) {
+                    function ($message) use ($user, $admin_users) {
                         $message
-                            ->to($user->email, $user->username)
+                            ->to($user->email, $user->first_name . " " . $user->last_name)
                             ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
                     }
                 );
+
+                // Send notification to administrators
+                Mail::queueOn(
+                    Config::get('confide::email_queue'),
+                    Config::get('confide::email_account_to_admin'),
+                    compact('user'),
+                    function ($message) use ($user, $admin_users) {
+                        foreach($admin_users as $admin)
+                        {
+                            $message->to($admin->email, $admin->first_name . ' ' . $admin->last_name);
+                        }
+                        $message
+                            ->subject(Lang::get('confide::confide.email.user_request.subject'));
+                    }
+                );
+
             }
 
             return Redirect::to('user/login')
-                ->with('success', Lang::get('user/user.user_account_created'));
+                ->with('success', Lang::get('user/user.user_request_sent'));
         } else {
             $error = $user->errors()->all(':message');
 

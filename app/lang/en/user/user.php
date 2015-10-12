@@ -20,6 +20,7 @@ return array(
 	'user_account_is_not_confirmed'          => 'User Account is not confirmed.',
 	'user_account_updated'          => 'User Account updated.',
 	'user_account_created'          => 'User Account created.',
+    'user_request_sent'             => 'User request sent to administrators.',
 
     'first_name' => 'First Name',
     'last_name' => 'Last Name',

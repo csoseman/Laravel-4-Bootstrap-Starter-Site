@@ -70,8 +70,10 @@ return array(
     |
     */
 
-    'email_reset_password' =>       'emails.auth.passwordreset', // with $user and $token.
+    'email_reset_password'       => 'emails.auth.passwordreset', // with $user and $token.
     'email_account_confirmation' => 'emails.auth.confirm', // with $user
+    'email_account_request'      => 'emails.auth.senttoadmin', // with $user
+    'email_account_to_admin'      => 'emails.auth.userrequest', // with $user
 
     /*
     |--------------------------------------------------------------------------

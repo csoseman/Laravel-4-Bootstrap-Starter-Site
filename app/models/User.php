@@ -117,4 +117,14 @@ class User extends Eloquent implements ConfideUserInterface {
         return $this->belongsToMany('Role','assigned_roles');
     }
 
+    /**
+     * Get the e-mail address where password reminders are sent.
+     *
+     * @return User
+     */
+    public function pendingUsers()
+    {
+        return $this->where('confirmed', 0)->get();
+    }
+
 }
